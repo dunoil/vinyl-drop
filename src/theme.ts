@@ -1,7 +1,7 @@
 import { defineTheme } from "@hyper-elements/react";
 
 /**
- * VINYL DROP theme — "bold retro": black, cream paper, hot red for
+ * VINYL DROP theme, "bold retro": black, cream paper, hot red for
  * shapes, condensed-feel Inter bold with tight letter spacing and
  * uppercase kickers.
  *
@@ -9,7 +9,7 @@ import { defineTheme } from "@hyper-elements/react";
  * (phone styles are an error in a Document or a Canvas); Email and
  * Page templates set their own phone styles.
  *
- * Hot red #e10600 is a shape colour only — it never sets body text.
+ * Hot red #e10600 is a shape colour only, it never sets body text.
  * Text ink is black #141414 or dark red #a80000 (both >= 4.5:1 on
  * the cream paper). Status colours are dark enough to be text: in
  * stock green #166534, low stock amber #92400e, sold out red

@@ -18,12 +18,12 @@ import { vinylTheme } from "../src/theme";
 import { DropStrip } from "../src/components/shared";
 
 /**
- * OUTPUT 4 — The cover-art card (Canvas root, 1080 x 1080 -> PNG).
+ * OUTPUT 4, The cover-art card (Canvas root, 1080 x 1080 -> PNG).
  *
  * A square social card rendered on the server with renderImage().
  * The batch makes thirteen cards: the drop cover, plus one per
  * release. Fonts are passed in as bytes by the scripts; nothing is
- * fetched. The theme's canvas format forces Inter here — satori
+ * fetched. The theme's canvas format forces Inter here, satori
  * only has the Inter bytes we give it. The Canvas root takes no
  * tokens prop; colours are set on the elements directly.
  */
@@ -42,8 +42,8 @@ export function CoverCard({
       height={1080}
       title={
         isCover
-          ? `${s.name} — Drop ${s.dropNo} cover`
-          : `${release.artist} — ${release.title}`
+          ? `${s.name}, Drop ${s.dropNo} cover`
+          : `${release.artist}, ${release.title}`
       }
       lang="en"
       style={{

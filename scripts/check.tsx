@@ -16,7 +16,7 @@ import CoverCard from "../templates/cover-card";
  * core checks + lint (readability) + the email-client plugin (what Outlook,
  * Gmail and Apple Mail remove or change). An error stops the run, so a
  * batch of 12 preorder emails can never ship 12 copies of one mistake.
- * The verdict is written to checks.json — a file, not a claim.
+ * The verdict is written to checks.json, a file, not a claim.
  */
 const templates = [
   { name: "preorder-email", element: <PreorderEmail /> },

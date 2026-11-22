@@ -12,7 +12,7 @@ import type { Release, Store } from "../data/drop";
 import { STATUS_COLORS, STATUS_LABELS, stockStatus } from "../data/drop";
 
 /**
- * Shared components — plain functions returning elements, used under
+ * Shared components, plain functions returning elements, used under
  * several roots, which is exactly why the emailed pressing and the
  * printed invoice can never disagree about a catalogue number or a
  * price.
@@ -22,8 +22,8 @@ import { STATUS_COLORS, STATUS_LABELS, stockStatus } from "../data/drop";
  * The DropStrip: a record-store ruler of alternating hot-red and
  * black squares, one per release, coloured by that release's stock
  * status when given the releases. Built from a Row of fixed-width
- * Columns with an explicit width — never a Grid, never an Svg, never
- * an image — because an Email cannot hold an Svg and inboxes block
+ * Columns with an explicit width, never a Grid, never an Svg, never
+ * an image, because an Email cannot hold an Svg and inboxes block
  * images. It is the drop, drawn as a sleeve spine.
  */
 export function DropStrip({
@@ -130,7 +130,7 @@ export function DropLine({ store }: { store: Store }) {
   );
 }
 
-/** The release board, as a table — email, page and invoice PDF.
+/** The release board, as a table, email, page and invoice PDF.
  *  TableCells hold text and inline Spans directly, never a nested Text.
  *  `compact` drops the Pressing and Stock columns: a 600px email
  *  cannot hold seven columns without squeezing the record names, and
@@ -178,7 +178,7 @@ export function ReleaseTable({
           </TableCell>
           <TableCell>
             <Span style={{ fontWeight: 700 }}>{r.artist}</Span>
-            {` — ${r.title}`}
+            {`, ${r.title}`}
           </TableCell>
           <TableCell>{r.format}</TableCell>
           {compact ? null : <TableCell>{r.pressing}</TableCell>}
@@ -200,14 +200,14 @@ export function ReleaseTable({
   );
 }
 
-/** Releases running low — page and invoice PDF. */
+/** Releases running low, page and invoice PDF. */
 export function LowStockList({ releases }: { releases: Release[] }) {
   return (
     <Column style={{ gap: 6 }}>
       {releases.map((r) => (
         <Text key={r.cat}>
           <Span style={{ fontWeight: 700 }}>
-            {r.artist} — {r.title}
+            {r.artist}, {r.title}
           </Span>
           {` (${r.cat}) · ${r.stock} left of ${r.pressing} pressed · $${r.price}`}
         </Text>
@@ -224,8 +224,8 @@ export function KitFooter() {
         releases on the last Friday of every month
       </Text>
       <Text style={{ apply: ["quiet"], textAlign: "center" }}>
-        One drop file rendered this — email, page, invoice and stock
-        sheet, and cover cards — with Hyper Elements.
+        One drop file rendered this, email, page, invoice and stock
+        sheet, and cover cards, with Hyper Elements.
       </Text>
     </Column>
   );
@@ -242,7 +242,7 @@ export function DropHeading({ store }: { store: Store }) {
           lineHeight: 1.2,
         }}
       >
-        VINYL DROP — twelve records, one Friday, no repress
+        VINYL DROP, twelve records, one Friday, no repress
       </Text>
       <Text style={{ fontSize: 17 }}>
         Drop {store.dropNo} · {store.dateLabel} · {store.hours}

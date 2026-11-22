@@ -43,7 +43,7 @@ const doc = <InvoiceDocument />;
 const printed = await render(doc);
 await writeFile("out/invoice.html", printed.html);
 // With no font files given, renderPdf() draws in the standard PDF fonts
-// (Helvetica/Times) and warns about it in diagnostics — it never fetches.
+// (Helvetica/Times) and warns about it in diagnostics, it never fetches.
 const pdf = await renderPdf(doc, fontFiles ? { fonts: fontFiles } : undefined);
 await writeFile("out/invoice.pdf", pdf.pdf);
 console.log(
@@ -63,6 +63,6 @@ if (hasFonts && fontFiles) {
   console.log("cover-card PNG:", formatDiagnostics(diagnostics) || "clean");
 } else {
   console.log(
-    "cover-card: HTML written. PNG skipped — add Inter WOFF files to assets/fonts/ (they are passed to renderImage() as bytes; nothing is fetched).",
+    "cover-card: HTML written. PNG skipped, add Inter WOFF files to assets/fonts/ (they are passed to renderImage() as bytes; nothing is fetched).",
   );
 }

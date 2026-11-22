@@ -20,11 +20,11 @@ import {
 } from "../src/components/shared";
 
 /**
- * OUTPUT 1 — The preorder email (Email root -> email-safe HTML + a
+ * OUTPUT 1, The preorder email (Email root -> email-safe HTML + a
  * plain-text twin from the same render).
  *
  * No Svg, no remote images: the DropStrip is layout, so the
- * preorder survives image-blocking inboxes. The news leads — a
+ * preorder survives image-blocking inboxes. The news leads, a
  * preorder email is, first, the verdict on the customer's record:
  * reserved and ready for pickup or shipping, or sold out before
  * release day, with the waiting list as the honest answer.
@@ -53,8 +53,8 @@ export function PreorderEmail({
     <Email
       theme={vinylTheme}
       width={600}
-      previewText={`${preorder.order} — ${news}`}
-      title={`${s.name} — Preorder ${preorder.order}`}
+      previewText={`${preorder.order}, ${news}`}
+      title={`${s.name}, Preorder ${preorder.order}`}
       lang="en"
       style={{ gap: 20 }}
     >
@@ -78,8 +78,8 @@ export function PreorderEmail({
         </Text>
         <Text style={{ fontSize: 14 }}>
           {preorder.fulfilment === "Pickup"
-            ? `Pickup is at ${s.address}, ${s.hours} from ${s.dateLabel} — bring this order number, `
-            : `Shipping goes out on ${s.dateLabel} from ${s.address} — your order number is `}
+            ? `Pickup is at ${s.address}, ${s.hours} from ${s.dateLabel}, bring this order number, `
+            : `Shipping goes out on ${s.dateLabel} from ${s.address}, your order number is `}
           <Span style={{ apply: ["mono"], fontWeight: 700 }}>
             {preorder.order}
           </Span>
@@ -95,7 +95,7 @@ export function PreorderEmail({
           See the full drop
         </Button>
         <Text style={{ apply: ["quiet"] }}>
-          Order {preorder.order} · {release.cat} · {release.artist} —{" "}
+          Order {preorder.order} · {release.cat} · {release.artist} ,{" "}
           {release.title} · {s.name}, drop {s.dropNo},{" "}
           {s.dateLabel}.
         </Text>

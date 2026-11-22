@@ -1,4 +1,4 @@
-# VINYL DROP — design notes
+# VINYL DROP, design notes
 
 ## Concept
 
@@ -11,27 +11,26 @@ red `#e10600` for shapes only, dark red `#a80000` for text accents,
 mono catalogue numbers, Inter bold headings with tight letter
 spacing and uppercase kickers for a condensed retro feel.
 
-Signature: the **DropStrip** — one square per release, hot red
+Signature: the **DropStrip**, one square per release, hot red
 alternating with the release's stock colour (in stock green
-`#166534`, low stock amber `#92400e`, sold out red `#991b1b`) —
-plus the **catalogue stamp** (VD-0701 … VD-0712) that follows every
+`#166534`, low stock amber `#92400e`, sold out red `#991b1b`), plus the **catalogue stamp** (VD-0701 … VD-0712) that follows every
 release from the data file into the page cards, the email table and
 the invoice PDF. One file, one drop: that is the product idea and
 the design idea at once.
 
 ## Build lessons (from the gate and the screenshot review, all fixed)
 
-1. Theme element defaults are flat style objects — no `style:`
+1. Theme element defaults are flat style objects, no `style:`
    wrapper, and no nested `elements` inside a Table entry
    (`TableCell` gets its own top-level entry).
-2. Theme defaults reject `padding: {x, y}` — use the array form
+2. Theme defaults reject `padding: {x, y}`, use the array form
    `[vertical, horizontal]` there (and, in this version, in Section
    styles too).
-3. `TableCell` holds text and inline `Span`s directly — never a
+3. `TableCell` holds text and inline `Span`s directly, never a
    nested `Text`. Inline runs inside `Text` are `Span`s, not nested
    `Text`s.
 4. An Email has no `subject` prop and a root has no padding.
-5. A mark built from a Grid scatters if its columns stretch — the
+5. A mark built from a Grid scatters if its columns stretch, the
    DropStrip is Rows of fixed-width Columns with an explicit width.
    A 12-cell strip overflows a hero column, so the strip splits into
    rows of 12 (`perRow`) and the hero keeps the six-cell sleeve mark.
@@ -44,9 +43,8 @@ the design idea at once.
    render diagnostics, so headings are 700 throughout.
 8. Satori only draws the fonts it is given as bytes: the theme's
    `formats.canvas` forces Inter on Canvas headings and text, while
-   the Document keeps Inter too — no serif anywhere in this kit.
-9. A stamp `Text` alone in a `Row` stretches to the full width —
-   wrap it in a `flex: "none"` Column beside an empty Column so it
+   the Document keeps Inter too, no serif anywhere in this kit.
+9. A stamp `Text` alone in a `Row` stretches to the full width,    wrap it in a `flex: "none"` Column beside an empty Column so it
    hugs its text.
 10. A 600px email cannot hold a seven-column table without squeezing
     the record names to one word per line, so the email uses the

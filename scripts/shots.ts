@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import puppeteer from "puppeteer";
 
 /**
- * Screenshots of the REAL rendered outputs in docs/ — the same HTML files
+ * Screenshots of the REAL rendered outputs in docs/, the same HTML files
  * scripts/render.tsx wrote to out/, photographed in headless Chrome.
  * Nothing here is a mock-up: if it is pictured, it was rendered.
  * The overview is a composite of those same photographs.
@@ -42,7 +42,7 @@ for (const shot of shots) {
 }
 
 // Overview: the four outputs side by side, photographed from the real
-// screenshots — a composite, not a mock-up.
+// screenshots, a composite, not a mock-up.
 const overviewHtml = `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
 body { margin: 0; background: #f7f0dd; font-family: Georgia, serif; }
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 32px; align-items: start; }

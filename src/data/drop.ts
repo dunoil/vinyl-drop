@@ -1,5 +1,5 @@
 /**
- * The drop file — the kit's single source of truth.
+ * The drop file, the kit's single source of truth.
  *
  * One record store drop renders the preorder email, the public drop
  * page, the printed invoice and stock sheet (PDF) and the cover-art
@@ -15,7 +15,7 @@ export type Format = "LP" | "12-inch" | "7-inch";
 export type StockStatus = "in-stock" | "low-stock" | "sold-out";
 
 export interface Release {
-  /** "VD-0701" — the catalogue number printed on every artefact. */
+  /** "VD-0701", the catalogue number printed on every artefact. */
   cat: string;
   artist: string;
   title: string;
@@ -50,7 +50,7 @@ export interface Store {
   name: string;
   /** 7 */
   dropNo: number;
-  /** "Friday 27 November 2026" — printed on every artefact. */
+  /** "Friday 27 November 2026", printed on every artefact. */
   dateLabel: string;
   hours: string;
   address: string;
@@ -72,7 +72,7 @@ export const drop: Store = {
   pitch:
     "Twelve records, one Friday, no repress. VINYL DROP is an independent record store that drops twelve new releases on the last Friday of every month: every pressing is numbered, every sleeve is on the wall for the week, and when a title sells out it is gone. This drop has 3,800 copies across twelve titles, 1,069 of them already claimed by preorder. Two titles sold out before the doors opened. The list below is the whole drop, with the pressing, the stock and the price of every record.",
   ownersNote:
-    "Thank you for queuing, preordering and flipping through the crates with us. A pressing is a promise: the number on your sleeve is the number we pressed, and we do not press more. If your record says sold out, ask at the counter about the waiting list — cancelled preorders go back on the shelf on release day, first come first served. If it says low stock, come early: the last three copies of a title never last the morning. — Jo Reyes, VINYL DROP Records",
+    "Thank you for queuing, preordering and flipping through the crates with us. A pressing is a promise: the number on your sleeve is the number we pressed, and we do not press more. If your record says sold out, ask at the counter about the waiting list, cancelled preorders go back on the shelf on release day, first come first served. If it says low stock, come early: the last three copies of a title never last the morning. Jo Reyes, VINYL DROP Records",
   contact: "hello@vinyldrop.example",
 };
 
@@ -108,7 +108,7 @@ export const preorders: Preorder[] = [
 
 export const samplePreorder: Preorder = preorders[0];
 
-/** The batch takes the first N preorders, in order number order — deterministic. */
+/** The batch takes the first N preorders, in order number order, deterministic. */
 export function makePreorders(count: number): Preorder[] {
   return preorders.slice(0, count);
 }

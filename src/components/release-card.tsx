@@ -1,7 +1,7 @@
 import { Column, Row, Span, Text, defineElement, prop, token } from "@hyper-elements/react";
 
 /**
- * `vinyl.ReleaseCard` — one release, as a record-store card: a red
+ * `vinyl.ReleaseCard`, one release, as a record-store card: a red
  * rule, the catalogue number stamp, the artist and title, the
  * format and pressing, and the stock status in its own colour.
  *

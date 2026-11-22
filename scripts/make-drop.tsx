@@ -27,7 +27,7 @@ import {
  *
  * The gate runs first: the preorder email is validated before a single
  * file is written, so one bad drop entry never becomes 12 bad emails.
- * Preorder generation is deterministic — a corrections run re-renders
+ * Preorder generation is deterministic, a corrections run re-renders
  * only the records that changed.
  */
 const arg = process.argv.indexOf("--count");
@@ -84,7 +84,7 @@ if (existsSync(bold) && existsSync(regular)) {
 }
 
 const summary = {
-  drop: `${drop.name} — Drop ${drop.dropNo} (${drop.dateLabel})`,
+  drop: `${drop.name}, Drop ${drop.dropNo} (${drop.dateLabel})`,
   emails,
   releases: releases.length,
   inStock: countByStatus("in-stock"),

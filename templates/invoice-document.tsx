@@ -24,7 +24,7 @@ import { vinylTheme } from "../src/theme";
 import { DropStrip, LowStockList, ReleaseTable } from "../src/components/shared";
 
 /**
- * OUTPUT 3 — The printed invoice and stock sheet (Document root ->
+ * OUTPUT 3, The printed invoice and stock sheet (Document root ->
  * print HTML via render(), PDF via renderPdf() from
  * @hyper-elements/react/pdf).
  *
@@ -33,7 +33,7 @@ import { DropStrip, LowStockList, ReleaseTable } from "../src/components/shared"
  * are the twelve releases, four to a page; page five is the invoice
  * totals, the low-stock watch list and the owner's note. Each page
  * carries the same drop strip the email sent, and the footer counts
- * the pages — written for a human holding paper, not a browser print
+ * the pages, written for a human holding paper, not a browser print
  * button. Four releases per release page, so no table row is ever
  * cut off at a page edge: a Document page clips what does not fit,
  * it never flows it onto the next page.
@@ -50,7 +50,7 @@ export function InvoiceDocument({ store: s = drop }: { store?: Store }) {
       theme={vinylTheme}
       size="A4"
       margin={42}
-      title={`${s.name} — Drop ${s.dropNo} invoice and stock sheet`}
+      title={`${s.name}, Drop ${s.dropNo} invoice and stock sheet`}
       lang="en"
       style={{ gap: 20 }}
     >
@@ -76,7 +76,7 @@ export function InvoiceDocument({ store: s = drop }: { store?: Store }) {
             {s.name} presents
           </Text>
           <Heading level={1} style={{ fontSize: 28 }}>
-            VINYL DROP — twelve records, one Friday, no repress
+            VINYL DROP, twelve records, one Friday, no repress
           </Heading>
           <Text>
             Drop {s.dropNo} · {s.dateLabel} · {s.hours} ·{" "}
@@ -118,7 +118,7 @@ export function InvoiceDocument({ store: s = drop }: { store?: Store }) {
         <Document.Page key={i} style={{ gap: 16 }}>
           <Column style={{ gap: 4 }}>
             <Heading level={1} style={{ fontSize: 28 }}>
-              Releases {pageReleases[0].cat}–
+              Releases {pageReleases[0].cat}-
               {pageReleases[pageReleases.length - 1].cat}
             </Heading>
             <Text>
@@ -158,7 +158,7 @@ export function InvoiceDocument({ store: s = drop }: { store?: Store }) {
         <Column style={{ gap: 8 }}>
           <Heading level={3}>Sold out ({gone.length})</Heading>
           <Text>
-            {gone.map((r) => `${r.artist} — ${r.title} (${r.cat})`).join(" · ")}
+            {gone.map((r) => `${r.artist}, ${r.title} (${r.cat})`).join(" · ")}
           </Text>
         </Column>
 
@@ -175,7 +175,7 @@ export function InvoiceDocument({ store: s = drop }: { store?: Store }) {
           }}
         >
           <Text style={{ fontWeight: 700 }}>
-            Twelve records, one Friday, no repress — keep this sheet.
+            Twelve records, one Friday, no repress, keep this sheet.
           </Text>
           <Text>
             It is the record of the drop: the same catalogue numbers,

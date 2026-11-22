@@ -31,7 +31,7 @@ import { ReleaseCard } from "../src/components/release-card";
 import { STATUS_LABELS } from "../src/data/drop";
 
 /**
- * OUTPUT 2 — The public drop page (Page root -> responsive web
+ * OUTPUT 2, The public drop page (Page root -> responsive web
  * HTML, no client-side JavaScript).
  *
  * The email's public twin. Where the email must survive Outlook,
@@ -50,7 +50,7 @@ export function StorePage({ store: s = drop }: { store?: Store }) {
     <Page
       theme={vinylTheme}
       width={1100}
-      title={`VINYL DROP — Drop ${s.dropNo} · ${s.dateLabel}`}
+      title={`VINYL DROP, Drop ${s.dropNo} · ${s.dateLabel}`}
       description={s.pitch}
       lang="en"
       style={{ gap: 0 }}
@@ -87,7 +87,7 @@ export function StorePage({ store: s = drop }: { store?: Store }) {
               level={1}
               style={{ fontSize: 46, mobile: { fontSize: 32 } }}
             >
-              VINYL DROP — twelve records, one Friday, no repress
+              VINYL DROP, twelve records, one Friday, no repress
             </Heading>
             <Text style={{ fontSize: 17 }}>
               {s.dateLabel} · {s.hours} · {s.address} · {s.owner}
@@ -111,7 +111,7 @@ export function StorePage({ store: s = drop }: { store?: Store }) {
             <DropStrip releases={releases.slice(0, 6)} cell={14} />
             <Text style={{ apply: ["quiet"], color: "#e8dcc0" }}>
               The sleeve mark: one square per release, hot red and
-              the release's stock colour — the same mark your email
+              the release's stock colour, the same mark your email
               and invoice carry.
             </Text>
           </Column>
@@ -129,7 +129,7 @@ export function StorePage({ store: s = drop }: { store?: Store }) {
         </Text>
         <DropStrip releases={releases} cell={12} perRow={12} />
         <Text style={{ color: token("colors.muted"), fontSize: 13 }}>
-          The drop strip: one square per release — red and the
+          The drop strip: one square per release, red and the
           release's stock colour, in catalogue order.
         </Text>
 
@@ -196,7 +196,7 @@ export function StorePage({ store: s = drop }: { store?: Store }) {
         <LowStockList releases={watch} />
         <Heading level={2}>Sold out ({gone.length})</Heading>
         <Text>
-          {gone.map((r) => `${r.artist} — ${r.title} (${r.cat})`).join(" · ")}
+          {gone.map((r) => `${r.artist}, ${r.title} (${r.cat})`).join(" · ")}
         </Text>
         <Text style={{ color: token("colors.muted"), fontSize: 13 }}>
           Questions: {s.contact}. Drop {s.dropNo} lands{" "}
